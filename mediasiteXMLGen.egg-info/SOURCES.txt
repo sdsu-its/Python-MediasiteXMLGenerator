@@ -1,0 +1,12 @@
+setup.py
+mediasiteXMLGen/.DS_Store
+mediasiteXMLGen/__init__.py
+mediasiteXMLGen/generator.py
+mediasiteXMLGen.egg-info/PKG-INFO
+mediasiteXMLGen.egg-info/SOURCES.txt
+mediasiteXMLGen.egg-info/dependency_links.txt
+mediasiteXMLGen.egg-info/requires.txt
+mediasiteXMLGen.egg-info/top_level.txt
+recorder_schedule_example/recorder_schedule_import.xsd
+recorder_schedule_example/recorder_schedule_import_complete_example.xml
+recorder_schedule_example/recurrence_import_example.xml

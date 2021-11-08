@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RecorderScheduleImport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <RecorderSchedules>
+    <RecorderSchedule>
+	  
+	  <!--
+	  
+    Presentation Template
+    =====================
+    
+	  It is possible to override certain values of the Presentation Template that was 
+	  selected in the Management Portal by including any of the following overrides:
+	  
+    <PresentationTemplateOverride>
+		  <PresentationTitle>Lecture Capture Demo</PresentationTitle>
+      <PlayerName>Default Player</PlayerName>
+      <FolderName>Demo</FolderName>
+      <PresenterNames>
+        <PresenterName>
+		      <FirstName>John</FirstName>
+			    <MiddleName>Q</MiddleName>
+			    <LastName>Doe</LastName>
+		    </PresenterName>
+      </PresenterNames>
+    </PresentationTemplateOverride>
+	  
+	  It is also possible to cause the template named "Default Presentation Template" to be used,
+	  even if a different one was selected in the Management Portal:
+	  
+	  <PresentationTemplateOverride>
+        <PresentationTemplateName>Default Presentation Template</PresentationTemplateName>
+	  </PresentationTemplateOverride>
+	  
+	  If a specific PresentationTemplateName is provided, none of the other PresentationTemplateOverride settings
+	  may be set.
+	  
+    
+    Modules
+    =====================
+    
+    If the Presentation Template selected has Modules associated with it, they will be applied to the imported schedules. 
+    It is possible to override Modules on the Presentation template. At minimum you must provide the ModuleId but you may also provide the ModuleName:
+    
+    <Modules>
+      <ModuleOverride>
+        <ModuleId>test::module::1</ModuleId>
+        <ModuleName>Test Module From Import</ModuleName>
+      </ModuleOverride>
+    </Modules>    
+    
+    If the Module exists it will be used; if it does not exist it will be created using the System Policy for Modules.
+    You may also override the permissions if the Module will be newly created:
+
+    <Modules>
+      <ModuleOverride>
+        <ModuleId>test::module::2</ModuleId>
+        <Permissions>
+          <AceEntry>
+            <DirectoryEntry>schedule::import::role</DirectoryEntry>
+            <Permission>3</Permission>
+          </AceEntry>
+        </Permissions>
+      </ModuleOverride>
+    </Modules>
+    
+    Permissions 1 = Read, 3 = Read+Write for the associated Role.
+
+	  -->
+
+
+      <RecorderName>My Recorder</RecorderName>
+      <PresentationNamingFormat>ScheduleNameAndNumber</PresentationNamingFormat>
+      <AdvanceCreationTimeInMinutes>60</AdvanceCreationTimeInMinutes>
+      <AdvanceLoadTimeInMinutes>5</AdvanceLoadTimeInMinutes>
+      <ScheduledOperations>None</ScheduledOperations>
+      <NotifyPresenters>true</NotifyPresenters>
+      <NotificationEmailAddresses>
+        <NotificationEmailAddress>notification_1@example.com</NotificationEmailAddress>
+        <NotificationEmailAddress>notification_2@example.com</NotificationEmailAddress>
+      </NotificationEmailAddresses>
+      <DeleteInactive>true</DeleteInactive>
+      <Modules>
+        <ModuleOverride>
+          <ModuleId>test::module::1</ModuleId>
+          <ModuleName>Test Module From Import</ModuleName>
+        </ModuleOverride>
+        <ModuleOverride>
+          <ModuleId>test::module::2</ModuleId>
+          <Permissions>
+            <AceEntry>
+              <DirectoryEntry>schedule::import::role</DirectoryEntry>
+              <Permission>3</Permission>
+            </AceEntry>
+          </Permissions>
+        </ModuleOverride>
+      </Modules>
+     <Recurrences>
+		<Recurrence>
+			<BeginDateTime>2022-01-01T17:00:00</BeginDateTime>
+			<EndDateTime>2022-05-30T18:00:00</EndDateTime>
+			<RecordingDurationInMinutes>160</RecordingDurationInMinutes>
+			<AlwaysExcludeHolidays>true</AlwaysExcludeHolidays>
+			<WeeklySchedule>
+				<RecurrenceFrequency>1</RecurrenceFrequency>
+				<Sunday>false</Sunday>
+				<Monday>true</Monday>
+				<Tuesday>false</Tuesday>
+				<Wednesday>false</Wednesday>
+				<Thursday>false</Thursday>
+				<Friday>false</Friday>
+				<Saturday>false</Saturday>
+			</WeeklySchedule>
+		</Recurrence>
+	</Recurrences>
+    </RecorderSchedule>
+  </RecorderSchedules>
+</RecorderScheduleImport>

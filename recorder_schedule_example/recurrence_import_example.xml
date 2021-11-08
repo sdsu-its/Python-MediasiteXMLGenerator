@@ -1,0 +1,23 @@
+<RecorderSchedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Recurrences>
+
+	<!-- Every week on Monday, Wednesday, and Friday -->
+    <Recurrence>
+	  <BeginDateTime>2009-09-01T16:00:00</BeginDateTime>
+	  <EndDateTime>2009-12-01T18:00:00</EndDateTime>
+      <RecordingDurationInMinutes>120</RecordingDurationInMinutes>
+      <AlwaysExcludeHolidays>true</AlwaysExcludeHolidays>
+      <WeeklySchedule>
+        <RecurrenceFrequency>1</RecurrenceFrequency>
+        <Sunday>false</Sunday>
+        <Monday>true</Monday>
+        <Tuesday>false</Tuesday>
+        <Wednesday>true</Wednesday>
+        <Thursday>false</Thursday>
+        <Friday>true</Friday>
+        <Saturday>false</Saturday>
+      </WeeklySchedule>
+    </Recurrence>
+
+  </Recurrences>
+</RecorderSchedule>

@@ -1,0 +1,5 @@
+numpy
+pandas
+lxml
+setuptools
+minidom-ext
