@@ -5,16 +5,6 @@ import sys
 
 
 
-# Days of the week
-
-Sunday    = 'false'
-Monday    = 'false'
-Tuesday   = 'false'
-Wednesday = 'false'
-Thursday  = 'false'
-Friday    = 'false'
-Saturday  = 'false'
-
 
 
 
@@ -33,6 +23,18 @@ def generate(fileName):
 
     row1 = classesDf.loc[0]
     row2 = classesDf.loc[1]
+    
+    # Days of the week
+
+    Sunday    = 'false'
+    Monday    = 'false'
+    Tuesday   = 'false'
+    Wednesday = 'false'
+    Thursday  = 'false'
+    Friday    = 'false'
+    Saturday  = 'false'
+
+
 
     def convertStartTime(x):
 
@@ -150,9 +152,12 @@ def generate(fileName):
         myXML = xml.dom.minidom.parseString(recurrences)
         recurrencData = myXML.toprettyxml()
 
-        with open('{}_{}.xml'.format(subject, schedule), 'w') as f:
-            print(recurrencData)
+        original_stdout = sys.stdout
 
+        with open('{}_{}.xml'.format(subject, schedule), 'w') as f:
+            sys.stdout = f
+            print(recurrencData)
+            sys.stdout = original_stdout
 
 
 
