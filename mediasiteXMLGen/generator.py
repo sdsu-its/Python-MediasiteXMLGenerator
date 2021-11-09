@@ -151,6 +151,8 @@ def generate(fileName):
             timeInMinutes, Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday)
         myXML = xml.dom.minidom.parseString(recurrences)
         recurrencData = myXML.toprettyxml()
+        print(recurrencData)
+
 
         original_stdout = sys.stdout
 
