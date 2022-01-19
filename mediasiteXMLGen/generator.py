@@ -132,6 +132,10 @@ def generate(fileName):
         recurrences = '<?xml version="1.0" encoding="utf-8" ?><RecorderScheduleImport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><RecorderSchedules><RecorderSchedule><RecorderName>My Recorder</RecorderName><PresentationNamingFormat>ScheduleNameAndNumber</PresentationNamingFormat><AdvanceCreationTimeInMinutes>60</AdvanceCreationTimeInMinutes><AdvanceLoadTimeInMinutes>5</AdvanceLoadTimeInMinutes><ScheduledOperations>None</ScheduledOperations><NotifyPresenters>true</NotifyPresenters><NotificationEmailAddresses><NotificationEmailAddress>notification_1@example.com</NotificationEmailAddress><NotificationEmailAddress>notification_2@example.com</NotificationEmailAddress></NotificationEmailAddresses><DeleteInactive>true</DeleteInactive><Modules><ModuleOverride><ModuleId>test::module::1</ModuleId><ModuleName>Test Module From Import</ModuleName></ModuleOverride><ModuleOverride><ModuleId>test::module::2</ModuleId><Permissions><AceEntry><DirectoryEntry>schedule::import::role</DirectoryEntry><Permission>3</Permission></AceEntry></Permissions></ModuleOverride></Modules><Recurrences><Recurrence><BeginDateTime>2022-01-01T{}:00:00</BeginDateTime><EndDateTime>2022-05-30T18:00:00</EndDateTime><RecordingDurationInMinutes>{}</RecordingDurationInMinutes><AlwaysExcludeHolidays>true</AlwaysExcludeHolidays><WeeklySchedule><RecurrenceFrequency>1</RecurrenceFrequency><Sunday>{}</Sunday><Monday>{}</Monday><Tuesday>{}</Tuesday><Wednesday>{}</Wednesday><Thursday>{}</Thursday><Friday>{}</Friday><Saturday>{}</Saturday></WeeklySchedule></Recurrence></Recurrences></RecorderSchedule></RecorderSchedules></RecorderScheduleImport>'.format(beginDateTime, timeInMinutes, Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday)
         myXML = xml.dom.minidom.parseString(recurrences)
         recurrencData = myXML.toprettyxml()
+        print(recurrencData)
+
+
+        original_stdout = sys.stdout
 
         print(recurrencData)
 
